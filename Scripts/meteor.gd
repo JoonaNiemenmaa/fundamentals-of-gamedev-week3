@@ -15,3 +15,9 @@ func _physics_process(delta: float) -> void:
 		queue_free()
 	elif position.y > DESTROY_THRESHOLD:
 		queue_free()
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body is Player:
+		body.cur_health -= 1
+		queue_free()

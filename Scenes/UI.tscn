@@ -19,11 +19,13 @@ offset_left = 540.0
 offset_top = 24.0
 offset_right = 617.0
 offset_bottom = 47.0
-text = "some text"
+text = "Score: 0"
 horizontal_alignment = 1
 
 [node name="HP" type="Label" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 19.0
+offset_top = 21.0
+offset_right = 59.0
+offset_bottom = 44.0
 text = "HP: 3"
