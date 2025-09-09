@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cyp7nebu0o5ng"]
+[gd_scene load_steps=2 format=3 uid="uid://cyp7nebu0o5ng"]
 
-[ext_resource type="Script" uid="uid://bu6kpa83dfb68" path="res://Scenes/ui.gd" id="1_nxvpl"]
-[ext_resource type="Script" uid="uid://bxanjnlheamyw" path="res://Scripts/score.gd" id="1_w371h"]
+[ext_resource type="Script" uid="uid://bu6kpa83dfb68" path="res://Scripts/ui.gd" id="1_nxvpl"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -10,6 +9,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -1152.0
 offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_nxvpl")
 
 [node name="Score" type="Label" parent="."]
@@ -20,4 +21,9 @@ offset_right = 617.0
 offset_bottom = 47.0
 text = "some text"
 horizontal_alignment = 1
-script = ExtResource("1_w371h")
+
+[node name="HP" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "HP: 3"
