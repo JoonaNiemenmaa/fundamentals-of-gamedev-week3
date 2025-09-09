@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cyp7nebu0o5ng"]
+[gd_scene load_steps=3 format=3 uid="uid://cyp7nebu0o5ng"]
 
+[ext_resource type="Script" uid="uid://bu6kpa83dfb68" path="res://Scenes/ui.gd" id="1_nxvpl"]
 [ext_resource type="Script" uid="uid://bxanjnlheamyw" path="res://Scripts/score.gd" id="1_w371h"]
 
 [node name="UI" type="Control"]
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -1152.0
 offset_bottom = -648.0
+script = ExtResource("1_nxvpl")
 
 [node name="Score" type="Label" parent="."]
 layout_mode = 0

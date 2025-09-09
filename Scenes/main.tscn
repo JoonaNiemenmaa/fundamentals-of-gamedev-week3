@@ -7,9 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://cyp7nebu0o5ng" path="res://Scenes/UI.tscn" id="5_kry3j"]
 [ext_resource type="Texture2D" uid="uid://j0fr8h6w4n5k" path="res://Assets/gfx/Backgrounds/darkPurple.png" id="5_p33co"]
 
-[node name="Main" type="Node" node_paths=PackedStringArray("ui")]
+[node name="Main" type="Node"]
 script = ExtResource("1_21xkr")
-ui = NodePath("Ui")
 
 [node name="BG" type="Node2D" parent="."]
 
@@ -82,7 +81,6 @@ position = Vector2(549, 579)
 collision_mask = 0
 
 [node name="Ui" parent="." instance=ExtResource("5_kry3j")]
-anchors_preset = 15
 offset_right = 0.0
 offset_bottom = 0.0
 grow_horizontal = 2

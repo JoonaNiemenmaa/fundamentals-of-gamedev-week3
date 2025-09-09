@@ -14,8 +14,6 @@ func _physics_process(_delta):
 		var hit_point = process_ray_cast(click_point)
 		ray_cast_gfx(hit_point if hit_point else click_point)
 
-
-
 # -- TASK 3 Raycast functionality HERE -- #
 func process_ray_cast(target_position: Vector2):
 	var space_state = get_world_2d().direct_space_state
