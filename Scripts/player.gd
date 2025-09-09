@@ -7,7 +7,7 @@ const MOVE_SPEED = 300
 var cur_health = MAX_HEALTH
 
 func _process(_delta: float) -> void:
-	if main.ui:
+	if main:
 		main.ui.update_health(cur_health)
 		if cur_health <= 0:
 			cur_health = MAX_HEALTH
