@@ -10,6 +10,7 @@ var cur_health = MAX_HEALTH
 func _physics_process(delta: float) -> void:
 	position.y += MOVE_SPEED * delta
 	if cur_health <= 0:
+		print(main)
 		if main is Main:
 			main.ui.increment_score()
 		queue_free()
