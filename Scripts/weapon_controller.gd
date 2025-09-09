@@ -5,19 +5,32 @@ extends Node2D
 @export_flags_2d_physics var collision_mask: int
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _physics_process(_delta):
 	look_at(get_global_mouse_position())
 	rotation_degrees += 90
 	if Input.is_action_just_pressed("click"):
 		# Get cursor position and pass it to raycast and gfx methods
 		var click_point = get_global_mouse_position()
-		process_ray_cast(click_point)
-		ray_cast_gfx(click_point)
+		var hit_point = process_ray_cast(click_point)
+		ray_cast_gfx(hit_point if hit_point else click_point)
+
 
 
 # -- TASK 3 Raycast functionality HERE -- #
 func process_ray_cast(target_position: Vector2):
-	pass
+	var space_state = get_world_2d().direct_space_state
+	var query = PhysicsRayQueryParameters2D.create(global_position + offset.rotated(rotation), target_position)
+	query.collide_with_areas = true
+	query.collision_mask = 2
+	var result = space_state.intersect_ray(query)
+	if result:
+		var collider = result.get("collider")
+		if collider is Meteor:
+			collider.cur_health -= 1
+
+	return result.get("position")
+
+
 
 # --------------------------------------- #
 
