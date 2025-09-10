@@ -1,6 +1,7 @@
 extends Node
 @export var enemy_list: Array[PackedScene]
 
+@export var ui: UI
 @export var offset_y = -20
 @export var offset_x_min = 10
 @export var offset_x_max = 1100
@@ -23,6 +24,7 @@ func spawn_enemy():
 		return
 	var enemy: PackedScene = enemy_list.pick_random()
 	var clone = enemy.instantiate()
+	if clone is Meteor:
+		clone.ui = ui
 	clone.position = Vector2(randf_range(offset_x_min, offset_x_max), offset_y)
 	add_child(clone)
-	
