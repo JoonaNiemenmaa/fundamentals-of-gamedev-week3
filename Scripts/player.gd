@@ -3,15 +3,16 @@ class_name Player extends CharacterBody2D
 const MAX_HEALTH = 3
 const MOVE_SPEED = 300
 
-@onready var main: Main = get_tree().get_current_scene()
+#@onready var main: Main = get_tree().get_current_scene()
+@export var ui: UI
 var cur_health = MAX_HEALTH
 
 func _process(_delta: float) -> void:
-	if main:
-		main.ui.update_health(cur_health)
+	if ui:
+		ui.update_health(cur_health)
 		if cur_health <= 0:
 			cur_health = MAX_HEALTH
-			main.ui.reset_score()
+			ui.reset_score()
 
 
 func _physics_process(_delta: float) -> void:
