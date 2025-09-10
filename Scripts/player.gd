@@ -7,6 +7,16 @@ const MOVE_SPEED = 300
 @export var ui: UI
 var cur_health = MAX_HEALTH
 
+func _ready() -> void:
+	print(ui)
+	if not ui:
+		var tree = get_tree()
+		print(tree)
+		if tree:
+			var scene = tree.get_current_scene()
+			print(scene)
+
+
 func _process(_delta: float) -> void:
 	if ui:
 		ui.update_health(cur_health)

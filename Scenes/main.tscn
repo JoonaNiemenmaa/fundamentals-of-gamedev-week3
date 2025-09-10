@@ -76,9 +76,10 @@ texture = ExtResource("5_p33co")
 script = ExtResource("3_vvr7m")
 enemy_list = Array[PackedScene]([ExtResource("3_jjvhh")])
 
-[node name="Player" parent="." instance=ExtResource("2_kq7qh")]
+[node name="Player" parent="." node_paths=PackedStringArray("ui") instance=ExtResource("2_kq7qh")]
 position = Vector2(577, 507)
 collision_mask = 0
+ui = NodePath("../UI")
 
 [node name="UI" parent="." instance=ExtResource("5_kry3j")]
 offset_right = 0.0
